@@ -4,7 +4,7 @@
 
 #define correct_ans 4
 #define wrong_ans -1
-#define no_of_qns 4
+#define no_of_qns 4 //count the number of questions in the question bank (qb.txt)
 
 void enterDetails(char name[], char srn[]);
 
