@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <conio.h>
 
 #define correct_ans 4
 #define wrong_ans -1
@@ -76,4 +77,5 @@ void main()
 	FILE* fr = fopen("results.txt", "a");
 	fprintf(fr, "SRN: %s, Score: %d\n", srn, score);
 	fclose(fr);
+	getch();
 }
