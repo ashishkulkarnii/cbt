@@ -97,11 +97,6 @@ void main()
 			}
 		}
 	}
-
-	for(i = 0; i < no_of_qns; i++) 
-	{
-		printf("%d\t", n[i]);
-	}
 	
 //presenting the user with the question and the options, and asking them to make their choice
 
