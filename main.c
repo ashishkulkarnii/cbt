@@ -8,8 +8,6 @@
 #define wrong_ans -1 //negative marking
 #define no_of_qns 4 //number of question in qb.txt
 
-void enterDetails(char name[], char srn[]);
-
 struct info //to store all the info about each question: the question, options and the correct option
 {
 	char q[200], a[50], b[50], c[50], d[50];
