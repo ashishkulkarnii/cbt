@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
+#include <time.h>
 
 #define correct_ans 4 //positive marking
 #define wrong_ans -1 //negative marking
@@ -76,18 +77,43 @@ void main()
 	}
 	fclose(fq);
 
+//randomizing order of questions
+
+	int n[100], temp;
+
+	for(i = 0; i < no_of_qns; i++) 
+		n[i] = i;
+
 	for(i = 0; i < no_of_qns; i++) 
 	{
+		srand(time(0));
+		for(i = 1; i < no_of_qns; i++)
+		{
+			if(rand() % 2 == 0)
+			{
+				temp = n[0];
+				n[0] = n[i];
+				n[i] = temp;
+			}
+		}
+	}
 
+	for(i = 0; i < no_of_qns; i++) 
+	{
+		printf("%d\t", n[i]);
+	}
+	
 //presenting the user with the question and the options, and asking them to make their choice
 
-		printf("\n%s\n%s\t%s\t%s\t%s\n", e[i].q, e[i].a, e[i].b, e[i].c, e[i].d);
+	for(i = 0; i < no_of_qns; i++) 
+	{
+		printf("\n%s\n%s\t%s\t%s\t%s\n", e[n[i]].q, e[n[i]].a, e[n[i]].b, e[n[i]].c, e[n[i]].d);
 		printf("Enter your choice (1, 2, 3 or 4): ");
 		scanf("%d", &choice);
 
 //comparing the user's choice with the correct option, and incrementing or decrementing their score
 
-		if(choice == e[i].an) 
+		if(choice == e[n[i]].an) 
 		{
 			score += correct_ans;
 			printf("Your answer is correct!\n");
